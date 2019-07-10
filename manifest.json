@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "YouTube Text-Recognition",
+	"version": "0.1",
+	"background": {
+		"page": "background/bg.html",
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": [ "*://*.youtube.com/watch*" ],
+			"js": [ "node_modules/jquery/dist/jquery.min.js", "content/content.js" ]
+		}
+	],
+	"browser_action": {
+		"default_icon": "res/youtube.png",
+		"default_popup": "popup/popup.html"
+	},
+	"web_accessible_resources": [
+		"background/worker.min.js",
+		"background/tesseract-core.wasm.js",
+		"lang-data/*.traineddata.gz"
+	],
+	"permissions": [ "activeTab", "storage", "notifications" ]
+}
