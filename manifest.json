@@ -9,7 +9,12 @@
 	"content_scripts": [
 		{
 			"matches": [ "*://*.youtube.com/watch*" ],
-			"js": [ "node_modules/jquery/dist/jquery.min.js", "content/content.js" ]
+			"css": [ "content/content.css", "node_modules/cropperjs/dist/cropper.css" ],
+			"js": [
+				"node_modules/jquery/dist/jquery.min.js",
+				"node_modules/cropperjs/dist/cropper.min.js",
+				"content/content.js"
+			]
 		}
 	],
 	"browser_action": {

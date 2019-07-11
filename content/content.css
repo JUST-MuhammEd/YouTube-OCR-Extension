@@ -1,0 +1,30 @@
+.txt-modal {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	background: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	perspective: 200px;
+	perspective-origin: 50% 0;
+}
+
+.txt-modal-dialog {
+	position: absolute;
+	background-color: aliceblue;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+	left: 50%;
+	top: 50%;
+	padding: 20px;
+	border-radius: 18px;
+	transform: translate(-50%, -50%);
+	transition: all .5s ease;
+}
+
+.hide-txt-modal {
+	display: none;
+}

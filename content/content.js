@@ -26,9 +26,18 @@ chrome.runtime.onMessage.addListener((message) => {
 			}
 		}
 		ctx.putImageData(imageData, 0, 0)
-		chrome.storage.local.set({
-			imgSrc: canvas.toDataURL('image/jpeg')
+		// chrome.storage.local.set({
+		// 	imgSrc: canvas.toDataURL('image/jpeg')
+		// })
+		let imgSrc = canvas.toDataURL('image/jpeg')
+		$('body').append("<div class='txt-modal'></div>")
+		$('.txt-modal').append("<div class='txt-modal-dialog'></div>")
+		$('.txt-modal-dialog').append(`<img id="screenshot" src="${imgSrc}"/>`)
+		let screenshot = document.getElementById('screenshot')
+		let cropBoxData
+		let canvasData
+		$('#screenshot').ready(() => {
+			const cropper = new Cropper(screenshot, {})
 		})
-		chrome.runtime.sendMessage({ text: 'create tab', data: canvas.toDataURL('image/jpeg') })
 	}
 })
