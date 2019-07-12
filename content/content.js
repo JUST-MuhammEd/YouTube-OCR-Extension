@@ -22,7 +22,7 @@ let recognize = (img) => {
 			console.log('progress', p)
 		})
 		.then(function(result) {
-			$('.txt-modal-dialog').append(`<textArea id="text">${result.text}</textArea>`)
+			$('.txt-modal-dialog').append(`<textarea id="recognition-result">${result.text}</textarea>`)
 			console.log(result)
 		})
 		.catch((err) => {
@@ -81,13 +81,13 @@ chrome.runtime.onMessage.addListener((message) => {
 			$('.txt-modal-dialog').append('<button id="btn-again">Try Again</button>')
 			recognize(imgSrc)
 			$('#btn-again').click(() => {
-				$('#text').remove()
+				$('#recognition-result').remove()
 				recognize(imgSrc)
 			})
 		})
 
 		$('#btn-close').click(() => {
-			$('.txt-modal').addClass('hide-txt-modal').removeClass('txt-modal')
+			$('.txt-modal').remove()
 		})
 	}
 })
