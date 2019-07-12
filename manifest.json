@@ -13,6 +13,7 @@
 			"js": [
 				"node_modules/jquery/dist/jquery.min.js",
 				"node_modules/cropperjs/dist/cropper.min.js",
+				"background/tesseract.min.js",
 				"content/content.js"
 			]
 		}
