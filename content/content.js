@@ -4,9 +4,9 @@ var ctx = cvs.getContext('2d')
 const { TesseractWorker } = Tesseract
 
 const worker = new TesseractWorker({
-	workerPath: chrome.runtime.getURL('background/worker.min.js'),
+	workerPath: chrome.runtime.getURL('lib/worker.min.js'),
 	langPath: chrome.runtime.getURL('lang-data'),
-	corePath: chrome.runtime.getURL('background/tesseract-core.wasm.js')
+	corePath: chrome.runtime.getURL('lib/tesseract-core.wasm.js')
 })
 
 let getMetadata = () => {
