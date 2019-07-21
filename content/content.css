@@ -14,8 +14,10 @@
 }
 
 .txt-modal-dialog {
+	display: flex;
+	flex-direction: column;
 	position: absolute;
-	background-color: aliceblue;
+	background-color: snow;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 	left: 50%;
 	top: 50%;
@@ -25,6 +27,42 @@
 	transition: all .5s ease;
 }
 
+.txt-modal-dialog img {
+	order: 1;
+}
+
+.txt-modal-dialog textarea {
+	order: 2;
+	margin: 10px 0;
+}
+
 .hide-txt-modal {
 	display: none;
+}
+
+.txt-modal-dialog .btn-container {
+	order: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.txt-modal-dialog .btn-container button {
+	margin: 7px auto;
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: transparent;
+	color: #d02525;
+	border-color: #d02525;
+	background-size: 200% auto;
+	box-shadow: 0 0 20px mistyrose;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.txt-modal-dialog .btn-container button:hover {
+	background-color: #d02525;
+	color: snow;
 }

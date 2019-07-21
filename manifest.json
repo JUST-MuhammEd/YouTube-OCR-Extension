@@ -20,5 +20,5 @@
 		"default_popup": "popup/popup.html"
 	},
 	"web_accessible_resources": [ "lib/worker.min.js", "lib/tesseract-core.wasm.js", "lang-data/*.traineddata.gz" ],
-	"permissions": [ "activeTab", "storage", "notifications" ]
+	"permissions": [ "activeTab" ]
 }

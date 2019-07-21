@@ -23,6 +23,7 @@ let recognize = (img) => {
 		})
 		.then(function(result) {
 			$('.txt-modal-dialog').append(`<textarea id="recognition-result">${result.text}</textarea>`)
+			$('textarea').height($('textarea')[0].scrollHeight)
 			console.log(result)
 		})
 		.catch((err) => {
@@ -75,15 +76,13 @@ chrome.runtime.onMessage.addListener((message) => {
 	if (message.text == 'recognize') {
 		ctx.drawImage(video, 0, 0, cvs.width, cvs.height)
 
-		// chrome.storage.local.set({
-		// 	imgSrc: canvas.toDataURL('image/jpeg')
-		// })
 		let imgSrc = cvs.toDataURL('image/jpeg')
 		$('body').append("<div class='txt-modal'></div>")
 		$('.txt-modal').append("<div class='txt-modal-dialog'></div>")
 		$('.txt-modal-dialog').append(`<img id="screenshot" src="${imgSrc}"/>`)
-		$('.txt-modal-dialog').append('<button id="btn-crop">Crop</button>')
-		$('.txt-modal-dialog').append('<button id="btn-close">Close</button>')
+		$('.txt-modal-dialog').append('<div class="btn-container"></div>')
+		$('.btn-container').append('<button id="btn-crop">Crop</button>')
+		$('.btn-container').append('<button id="btn-close">Close</button>')
 		let screenshot = document.getElementById('screenshot')
 		let cropper
 
@@ -99,7 +98,7 @@ chrome.runtime.onMessage.addListener((message) => {
 			$('#screenshot').remove()
 			$('#btn-crop').remove()
 			$('.txt-modal-dialog').append(`<img id="screenshot" src="${imgSrc}"/>`)
-			$('.txt-modal-dialog').append('<button id="btn-again">Try Again</button>')
+			$('.btn-container').append('<button id="btn-again">Try Again</button>')
 			recognize(imgSrc)
 			$('#btn-again').click(() => {
 				$('#recognition-result').remove()

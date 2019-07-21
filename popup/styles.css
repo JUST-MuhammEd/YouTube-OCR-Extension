@@ -1,0 +1,26 @@
+body {
+	font-family: Roboto, Arial, Helvetica, sans-serif;
+	background-color: snow;
+	padding: 20px;
+}
+
+button {
+	margin: 7px auto;
+	padding: 10px;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: transparent;
+	color: #d02525;
+	border-color: #d02525;
+	background-size: 200% auto;
+	box-shadow: 0 0 20px mistyrose;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+button:hover {
+	background-color: #d02525;
+	color: snow;
+}
